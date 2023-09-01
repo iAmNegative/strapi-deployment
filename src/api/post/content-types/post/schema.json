@@ -30,6 +30,23 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "plugin::users-permissions.user"
+    },
+    "comments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::user-comment.user-comment",
+      "mappedBy": "post"
+    },
+    "likedBy": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "liked_lists": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::liked-list.liked-list",
+      "mappedBy": "post"
     }
   }
 }
