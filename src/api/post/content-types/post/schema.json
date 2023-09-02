@@ -37,11 +37,6 @@
       "target": "api::user-comment.user-comment",
       "mappedBy": "post"
     },
-    "likedBy": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "plugin::users-permissions.user"
-    },
     "liked_lists": {
       "type": "relation",
       "relation": "oneToMany",
