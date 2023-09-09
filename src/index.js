@@ -11,6 +11,7 @@ module.exports = {
         // origin: "http://localhost:3000",
         origin: "https://react-demo-7a31.onrender.com",
 
+
         methods: ["GET", "POST"],
         allowedHeaders: ["my-custom-header"],
         credentials: true,
@@ -34,8 +35,8 @@ module.exports = {
       });
 
       socket.on("sendMessage", async (data) => {
-
-        io.emit("message", {
+        const uniqueId = data.receiverUser;
+        io.emit(uniqueId, {
           receiverUser: data.receiverUser
         }, (error) => {// Sending the message to the backend
           if (error) {
