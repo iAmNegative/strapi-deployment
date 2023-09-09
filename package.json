@@ -14,7 +14,10 @@
     "@strapi/plugin-users-permissions": "4.12.5",
     "@strapi/provider-upload-cloudinary": "^4.12.5",
     "@strapi/strapi": "4.12.5",
+    "@types/axios": "^0.14.0",
+    "axios": "^1.5.0",
     "pg": "8.8.0",
+    "socket.io": "^4.7.2",
     "strapi-plugin-comments": "^2.2.14"
   },
   "author": {
