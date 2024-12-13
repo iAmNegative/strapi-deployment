@@ -8,8 +8,8 @@ module.exports = {
   bootstrap({ strapi }) {
     var io = require("socket.io")(strapi.server.httpServer, {
       cors: {
-        // origin: "http://localhost:3000",
-        origin: "https://react-demo-7a31.onrender.com",
+        origin: "http://localhost:3000",
+        // origin: "https://react-demo-7a31.onrender.com",
 
 
         methods: ["GET", "POST"],
@@ -47,3 +47,31 @@ module.exports = {
     });
   },
 };
+
+const https = require('https');
+
+exports.handler = async (event, context) => {
+ const url = 'https://yoursitehere.onrender.com';
+
+ return new Promise((resolve, reject) => {
+   const req = https.get(url, (res) => {
+     if (res.statusCode === 200) {
+       resolve({
+         statusCode: 200,
+         body: 'Server pinged successfully',
+       });
+     } else {
+       reject(
+         new Error(`Server ping failed with status code: ${res.statusCode}`)
+       );
+     }
+   });
+
+   req.on('error', (error) => {
+     reject(error);
+   });
+
+   req.end();
+ });
+};
+
